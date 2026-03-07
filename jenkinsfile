@@ -1,0 +1,28 @@
+pipeline{
+    agent any
+    stage{
+        stage('Checkout'){
+            steps{
+                git url:'https://github.com/sasanro55/proyecto-jenkins.git', banch:'main'
+            }
+        }
+        stage('Build'){
+            steps{
+                echo 'Compilando el codigo...'
+                sh 'echo "Simulacion de Build exitosa"'
+            }
+        }
+        stage('Test'){
+            steps{
+                echo 'Ejecutando pruebas automatizadas...'
+                sh 'echo "Pruebas completas exitosamente"'
+            }
+        }
+        stage('Deploy Simulation'){
+            steps{
+                echo 'Simulando despliegue...'
+                sh 'echo "Despliegue exitoso"'
+            }
+        }
+    }
+}
